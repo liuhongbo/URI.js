@@ -463,7 +463,8 @@
       value = data[key](key);
     } else {
       // data is a map of data
-      value = data[key];
+      //value = data[key];
+      value = data[Object.keys(data).find(k => k.toLowerCase() === key.toLowerCase())];//case insensitive
     }
 
     // generalize input into [ [name1, value1], [name2, value2], … ]
